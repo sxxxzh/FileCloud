@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Noto+Sans+SC:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#474747",
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed": "#ffffff",
+              "surface-variant": "#e5e2e1",
+              "tertiary": "#3b3b3c",
+              "on-background": "#1c1b1b",
+              "on-tertiary-fixed": "#ffffff",
+              "on-secondary-fixed": "#1b1c1c",
+              "secondary-container": "#d6d4d3",
+              "on-error-container": "#410002",
+              "on-tertiary": "#e3e2e2",
+              "error": "#ba1a1a",
+              "on-primary": "#e2e2e2",
+              "surface-tint": "#5e5e5e",
+              "surface-container": "#f0edec",
+              "background": "#fcf9f8",
+              "tertiary-fixed": "#5e5e5e",
+              "primary-container": "#3b3b3b",
+              "on-primary-fixed-variant": "#e2e2e2",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-high": "#ebe7e7",
+              "on-secondary": "#ffffff",
+              "primary": "#000000",
+              "outline-variant": "#c6c6c6",
+              "on-secondary-container": "#1b1c1c",
+              "surface-dim": "#dcd9d9",
+              "on-primary-container": "#ffffff",
+              "surface": "#fcf9f8",
+              "tertiary-container": "#747474",
+              "primary-fixed-dim": "#474747",
+              "inverse-surface": "#313030",
+              "on-tertiary-container": "#ffffff",
+              "on-surface": "#1c1b1b",
+              "outline": "#777777",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-fixed": "#c8c6c6",
+              "secondary-fixed-dim": "#acabab",
+              "on-error": "#ffffff",
+              "primary-fixed": "#5e5e5e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-fixed-variant": "#e3e2e2",
+              "secondary": "#5f5e5e",
+              "surface-bright": "#fcf9f8",
+              "on-secondary-fixed-variant": "#3b3b3b",
+              "tertiary-fixed-dim": "#464747"
+            },
+            fontFamily: {
+              "headline": ["Inter", "Noto Sans SC"],
+              "body": ["Inter", "Noto Sans SC"],
+              "label": ["Inter", "Noto Sans SC"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            background-color: #fcf9f8;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/60 dark:bg-black/60 backdrop-blur-3xl shadow-[0_20px_40px_rgba(28,27,27,0.06)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-6">
+<div class="active:scale-95 cursor-pointer text-black dark:text-white transition-all duration-150">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<h1 class="text-xl font-black tracking-[-0.02em] text-black dark:text-white">szhAo Vault</h1>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-inter tracking-tighter font-bold uppercase text-xs text-[#5f5e5e] hover:bg-[#f0edec] px-3 py-2 transition-all" href="#">Files</a>
+<a class="font-inter tracking-tighter font-bold uppercase text-xs text-black opacity-100 px-3 py-2 bg-[#f0edec]" href="#">Shared</a>
+<a class="font-inter tracking-tighter font-bold uppercase text-xs text-[#5f5e5e] hover:bg-[#f0edec] px-3 py-2 transition-all" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man with a neutral expression in high-contrast black and white lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO09OtJSn23FRtJrBXuqh7dE2vpGqXg6O-u6GDLlAiDrK8QqSSdCUJXD1FWPXtIdnYwiqCOXjevKk9RgLduIU0u98ON92V02jWVtLZrFhnPMgdl3w7DC98rpg8tri0OLJnRza4jmiMgOrZMOHCGs4lAaMGVKRIqVACvNkQnfk7thW6GEtt0GBrp7FXaIYJ-mWmHLUc551arujDpSZAjAKA6xRgz3Ynh9EiR4xXYuYIeVJ0mrULBXh-G3X86VzAgtk2R-TX26gvGA"/>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Section / Title Area -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-[10px] tracking-[0.2em] uppercase font-bold text-secondary mb-2 block">Management</span>
+<h2 class="text-6xl font-black tracking-tighter text-primary leading-none">我分享的链接</h2>
+<p class="mt-4 text-on-surface-variant font-medium tracking-tight">12 个活跃链接 — 正在监控数据传输状态</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary text-white px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary-fixed transition-all active:scale-95">
+                        创建新分享
+                    </button>
+</div>
+</div>
+</section>
+<!-- Filter & Search Bar -->
+<div class="bg-surface-container-low p-1 mb-12 flex flex-col md:flex-row items-center gap-1">
+<div class="relative flex-grow w-full">
+<span class="absolute left-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary">search</span>
+<input class="w-full bg-surface-container-lowest border-none pl-14 pr-6 py-5 text-sm focus:ring-0 focus:bg-white placeholder:text-outline transition-colors" placeholder="搜索文件名或提取码..." type="text"/>
+</div>
+<div class="flex h-full w-full md:w-auto gap-1">
+<button class="bg-surface-container-lowest px-6 py-5 flex items-center gap-3 hover:bg-white transition-all w-full md:w-auto">
+<span class="text-xs font-bold tracking-widest uppercase">全部类型</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<button class="bg-surface-container-lowest px-6 py-5 flex items-center gap-3 hover:bg-white transition-all w-full md:w-auto">
+<span class="text-xs font-bold tracking-widest uppercase">按时间排序</span>
+<span class="material-symbols-outlined text-xs">sort</span>
+</button>
+</div>
+</div>
+<!-- Content Grid (Shared Items) -->
+<div class="space-y-4">
+<!-- Header Row -->
+<div class="hidden md:grid grid-cols-12 gap-4 px-8 py-4 bg-surface-dim text-[10px] font-black uppercase tracking-widest text-on-surface-variant">
+<div class="col-span-5">文件名称</div>
+<div class="col-span-2">状态</div>
+<div class="col-span-2">过期时间</div>
+<div class="col-span-1">浏览次数</div>
+<div class="col-span-2 text-right">操作</div>
+</div>
+<!-- Item 1: PDF (Password Protected) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-8 py-8 bg-surface-container-lowest hover:bg-white transition-all group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-6">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-bold text-lg tracking-tight text-primary">2024_Q3_Strategic_Plan.pdf</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest mt-1">14.2 MB • PDF Document</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined !text-[14px]">lock</span>
+                        密码保护
+                    </div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-sm font-medium text-on-surface-variant">2024-12-31</p>
+</div>
+<div class="col-span-1 md:col-span-1">
+<p class="text-sm font-black">1,248</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-1">
+<button class="p-3 hover:bg-surface-container transition-colors active:scale-90" title="复制链接">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+<button class="p-3 hover:bg-surface-container text-error transition-colors active:scale-90" title="取消分享">
+<span class="material-symbols-outlined">link_off</span>
+</button>
+</div>
+</div>
+<!-- Item 2: ZIP (Public) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-8 py-8 bg-surface-container-lowest hover:bg-white transition-all group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-6">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">folder_zip</span>
+</div>
+<div>
+<h4 class="font-bold text-lg tracking-tight text-primary">Project_Brutal_Assets_v2.zip</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest mt-1">892.4 MB • Archive</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined !text-[14px]">public</span>
+                        公开链接
+                    </div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-sm font-medium text-on-surface-variant">永久有效</p>
+</div>
+<div class="col-span-1 md:col-span-1">
+<p class="text-sm font-black">4,502</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-1">
+<button class="p-3 hover:bg-surface-container transition-colors active:scale-90">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+<button class="p-3 hover:bg-surface-container text-error transition-colors active:scale-90">
+<span class="material-symbols-outlined">link_off</span>
+</button>
+</div>
+</div>
+<!-- Item 3: DOCX (Expired) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-8 py-8 bg-surface-container-low opacity-60 grayscale hover:grayscale-0 transition-all group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-6">
+<div class="w-12 h-12 bg-surface-variant flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-bold text-lg tracking-tight text-primary">Final_Contract_Revision.docx</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest mt-1">45 KB • Word Document</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-error-container text-error text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined !text-[14px]">history</span>
+                        已过期
+                    </div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-sm font-medium text-error">2023-10-15</p>
+</div>
+<div class="col-span-1 md:col-span-1">
+<p class="text-sm font-black">12</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-1">
+<button class="bg-primary text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-primary-fixed transition-all">
+                        重新激活
+                    </button>
+</div>
+</div>
+<!-- Item 4: RAR (Private) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-8 py-8 bg-surface-container-lowest hover:bg-white transition-all group">
+<div class="col-span-1 md:col-span-5 flex items-center gap-6">
+<div class="w-12 h-12 bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<h4 class="font-bold text-lg tracking-tight text-primary">Raw_Cinematic_Footage_B.rar</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest mt-1">4.2 GB • Archive</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined !text-[14px]">lock</span>
+                        密码保护
+                    </div>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-sm font-medium text-on-surface-variant">2024-05-20</p>
+</div>
+<div class="col-span-1 md:col-span-1">
+<p class="text-sm font-black">89</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex justify-end gap-1">
+<button class="p-3 hover:bg-surface-container transition-colors active:scale-90">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+<button class="p-3 hover:bg-surface-container text-error transition-colors active:scale-90">
+<span class="material-symbols-outlined">link_off</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Asymmetric Info Panel (Bento Style) -->
+<section class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-1 md:col-span-2 bg-primary p-12 text-white flex flex-col justify-between min-h-[300px]">
+<h3 class="text-3xl font-black tracking-tight leading-none uppercase">安全概览</h3>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-6xl font-black">98.2%</p>
+<p class="text-[10px] uppercase tracking-[0.3em] font-bold opacity-60 mt-2">链接完整性验证率</p>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined !text-[48px] opacity-30">verified_user</span>
+</div>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-high p-8 flex flex-col justify-between">
+<div>
+<h5 class="text-[10px] font-black uppercase tracking-widest mb-4">存储占用</h5>
+<div class="h-2 w-full bg-secondary-container mb-2">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+<p class="text-sm font-bold">1.2 TB / 2.0 TB</p>
+</div>
+<div class="mt-8">
+<p class="text-xs text-on-surface-variant leading-relaxed">您的分享链接产生的总流量已达到本月限额的 65%。请考虑升级以获得无限带宽。</p>
+<button class="mt-6 border border-outline px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all w-full">
+                        查看流量详情
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-12 pb-safe bg-white border-t-0 z-50">
+<div class="flex flex-col items-center justify-center text-[#5f5e5e] opacity-50 hover:opacity-100 transition-opacity duration-150 active:scale-90">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">文件</span>
+</div>
+<div class="flex flex-col items-center justify-center text-black font-bold active:scale-90">
+<span class="material-symbols-outlined">share</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">分享</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5f5e5e] opacity-50 hover:opacity-100 transition-opacity duration-150 active:scale-90">
+<span class="material-symbols-outlined">group</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">用户</span>
+</div>
+</nav>
+</body></html>

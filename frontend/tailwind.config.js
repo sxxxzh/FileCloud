@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "on-surface-variant": "#474747",
+        "inverse-primary": "#c6c6c6",
+        "on-primary-fixed": "#ffffff",
+        "surface-variant": "#e5e2e1",
+        "tertiary": "#3b3b3c",
+        "on-background": "#1c1b1b",
+        "on-tertiary-fixed": "#ffffff",
+        "on-secondary-fixed": "#1b1c1c",
+        "secondary-container": "#d6d4d3",
+        "on-error-container": "#410002",
+        "on-tertiary": "#e3e2e2",
+        "error": "#ba1a1a",
+        "on-primary": "#e2e2e2",
+        "surface-tint": "#5e5e5e",
+        "surface-container": "#f0edec",
+        "background": "#fcf9f8",
+        "tertiary-fixed": "#5e5e5e",
+        "primary-container": "#3b3b3b",
+        "on-primary-fixed-variant": "#e2e2e2",
+        "inverse-on-surface": "#f3f0ef",
+        "surface-container-high": "#ebe7e7",
+        "on-secondary": "#ffffff",
+        "primary": "#000000",
+        "outline-variant": "#c6c6c6",
+        "on-secondary-container": "#1b1c1c",
+        "surface-dim": "#dcd9d9",
+        "on-primary-container": "#ffffff",
+        "surface": "#fcf9f8",
+        "tertiary-container": "#747474",
+        "primary-fixed-dim": "#474747",
+        "inverse-surface": "#313030",
+        "on-tertiary-container": "#ffffff",
+        "on-surface": "#1c1b1b",
+        "outline": "#777777",
+        "error-container": "#ffdad6",
+        "surface-container-highest": "#e5e2e1",
+        "secondary-fixed": "#c8c6c6",
+        "secondary-fixed-dim": "#acabab",
+        "on-error": "#ffffff",
+        "primary-fixed": "#5e5e5e",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f6f3f2",
+        "on-tertiary-fixed-variant": "#e3e2e2",
+        "secondary": "#5f5e5e",
+        "surface-bright": "#fcf9f8",
+        "on-secondary-fixed-variant": "#3b3b3b",
+        "tertiary-fixed-dim": "#464747"
+      },
+      fontFamily: {
+        "headline": ["Inter", "Noto Sans SC", "sans-serif"],
+        "body": ["Inter", "Noto Sans SC", "sans-serif"],
+        "label": ["Inter", "Noto Sans SC", "sans-serif"]
+      },
+      borderRadius: {
+        "DEFAULT": "0px",
+        "lg": "0px",
+        "xl": "0px",
+        "full": "9999px"
+      }
+    },
+  },
+  plugins: [],
+}

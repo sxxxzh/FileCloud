@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Noto+Sans+SC:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#474747",
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed": "#ffffff",
+              "surface-variant": "#e5e2e1",
+              "tertiary": "#3b3b3c",
+              "on-background": "#1c1b1b",
+              "on-tertiary-fixed": "#ffffff",
+              "on-secondary-fixed": "#1b1c1c",
+              "secondary-container": "#d6d4d3",
+              "on-error-container": "#410002",
+              "on-tertiary": "#e3e2e2",
+              "error": "#ba1a1a",
+              "on-primary": "#e2e2e2",
+              "surface-tint": "#5e5e5e",
+              "surface-container": "#f0edec",
+              "background": "#fcf9f8",
+              "tertiary-fixed": "#5e5e5e",
+              "primary-container": "#3b3b3b",
+              "on-primary-fixed-variant": "#e2e2e2",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container-high": "#ebe7e7",
+              "on-secondary": "#ffffff",
+              "primary": "#000000",
+              "outline-variant": "#c6c6c6",
+              "on-secondary-container": "#1b1c1c",
+              "surface-dim": "#dcd9d9",
+              "on-primary-container": "#ffffff",
+              "surface": "#fcf9f8",
+              "tertiary-container": "#747474",
+              "primary-fixed-dim": "#474747",
+              "inverse-surface": "#313030",
+              "on-tertiary-container": "#ffffff",
+              "on-surface": "#1c1b1b",
+              "outline": "#777777",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e5e2e1",
+              "secondary-fixed": "#c8c6c6",
+              "secondary-fixed-dim": "#acabab",
+              "on-error": "#ffffff",
+              "primary-fixed": "#5e5e5e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-fixed-variant": "#e3e2e2",
+              "secondary": "#5f5e5e",
+              "surface-bright": "#fcf9f8",
+              "on-secondary-fixed-variant": "#3b3b3b",
+              "tertiary-fixed-dim": "#464747"
+            },
+            fontFamily: {
+              "headline": ["Inter", "Noto Sans SC"],
+              "body": ["Inter", "Noto Sans SC"],
+              "label": ["Inter", "Noto Sans SC"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f6f3f2;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d6d4d3;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/60 dark:bg-black/60 backdrop-blur-3xl shadow-[0_20px_40px_rgba(28,27,27,0.06)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-6">
+<div class="active:scale-95 cursor-pointer text-black dark:text-white hover:bg-[#f0edec] dark:hover:bg-[#2a2a2a] transition-all duration-150 p-2">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<h1 class="text-xl font-black tracking-[-0.02em] text-black dark:text-white">szhAo Vault</h1>
+</div>
+<div class="flex items-center gap-4">
+<nav class="hidden md:flex gap-8 items-center mr-8">
+<span class="font-inter tracking-tighter font-bold uppercase text-xs text-black dark:text-white opacity-100 cursor-pointer">文件</span>
+<span class="font-inter tracking-tighter font-bold uppercase text-xs text-[#5f5e5e] dark:text-[#a3a3a3] hover:text-black transition-colors cursor-pointer">分享</span>
+<span class="font-inter tracking-tighter font-bold uppercase text-xs text-[#5f5e5e] dark:text-[#a3a3a3] hover:text-black transition-colors cursor-pointer">用户</span>
+</nav>
+<div class="w-10 h-10 bg-surface-container-highest overflow-hidden active:scale-95 cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="minimalist studio portrait of a professional man with clean lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL9MJhIYJanFRlGpdfrSh5MWTFR7m9_gr7l6NT3Yb8rC_Aa2vQM1TlBzdAuT6Sdr4W39YDUYjcR1OvQP08lPFn2vob6Ov3lnpXzZN4pMBQOPxpv_-4qs-cs21W2adv4ez-TdgyrIVQbp0OyIqdPhsR9uq1DE6hMASrdlW_moP-Gy1ieJea6zZc2hYjymECHxkT9KbxtichAII1_wNnTR6z20295O-CyN-qf08X49fEv1RUspQQ62pZ-jZwrKU4SxmVL7XS8EVPXQ"/>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-32 px-8 max-w-7xl mx-auto">
+<!-- Hero Title & Storage Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+<div>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter text-primary mb-2">我的文件</h2>
+<p class="text-on-surface-variant font-medium tracking-tight">管理您的数字资产与机密文档</p>
+</div>
+<div class="w-full md:w-80">
+<div class="flex justify-between items-end mb-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">已用空间</span>
+<span class="text-xs font-bold font-mono">25.4 GB / 100 GB</span>
+</div>
+<div class="h-1 bg-secondary-container w-full overflow-hidden">
+<div class="h-full bg-primary w-[25.4%]"></div>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative mb-16">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container border-none py-6 pl-16 pr-8 text-lg focus:ring-0 focus:bg-surface-container-high transition-colors placeholder:text-outline" placeholder="搜索文件名、标签或内容..." type="text"/>
+<div class="absolute left-0 bottom-0 w-0 h-[1px] bg-primary transition-all duration-300 focus-within:w-full"></div>
+</div>
+<!-- Quick Access / Common Directories -->
+<section class="mb-20">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">常用目录</h3>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-surface-dim">
+<!-- Folder 1 -->
+<div class="bg-surface-container-lowest p-8 group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-6 block group-hover:text-white transition-colors">folder_open</span>
+<h4 class="font-bold text-lg mb-1 group-hover:text-white transition-colors">品牌资源</h4>
+<p class="text-xs text-on-surface-variant group-hover:text-white/60 transition-colors uppercase tracking-wider">124 Files • 2.4 GB</p>
+</div>
+<!-- Folder 2 -->
+<div class="bg-surface-container-lowest p-8 group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-6 block group-hover:text-white transition-colors">folder_open</span>
+<h4 class="font-bold text-lg mb-1 group-hover:text-white transition-colors">项目文档</h4>
+<p class="text-xs text-on-surface-variant group-hover:text-white/60 transition-colors uppercase tracking-wider">45 Files • 890 MB</p>
+</div>
+<!-- Folder 3 -->
+<div class="bg-surface-container-lowest p-8 group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-6 block group-hover:text-white transition-colors">folder_open</span>
+<h4 class="font-bold text-lg mb-1 group-hover:text-white transition-colors">财务报表</h4>
+<p class="text-xs text-on-surface-variant group-hover:text-white/60 transition-colors uppercase tracking-wider">82 Files • 1.1 GB</p>
+</div>
+<!-- Folder 4 -->
+<div class="bg-surface-container-lowest p-8 group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-6 block group-hover:text-white transition-colors">folder_open</span>
+<h4 class="font-bold text-lg mb-1 group-hover:text-white transition-colors">法律协议</h4>
+<p class="text-xs text-on-surface-variant group-hover:text-white/60 transition-colors uppercase tracking-wider">12 Files • 140 MB</p>
+</div>
+</div>
+</section>
+<!-- Recent Files -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">最近文件</h3>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">view_list</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">grid_view</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- File Header -->
+<div class="hidden md:grid grid-cols-12 px-6 py-4 bg-surface-dim text-[10px] font-bold uppercase tracking-widest text-secondary">
+<div class="col-span-6">文件名</div>
+<div class="col-span-2">大小</div>
+<div class="col-span-3">修改日期</div>
+<div class="col-span-1 text-right">操作</div>
+</div>
+<!-- File Row 1 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center bg-surface-container-lowest hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="col-span-10 md:col-span-6 flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-2xl">picture_as_pdf</span>
+</div>
+<div>
+<h5 class="font-bold text-sm tracking-tight">2024年第一季度市场分析报告.pdf</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter mt-1">PDF Document</p>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-xs font-mono">4.2 MB</div>
+<div class="hidden md:block col-span-3 text-xs text-on-surface-variant">2024-03-20 14:32</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer active:scale-90 transition-all">more_vert</span>
+</div>
+</div>
+<!-- File Row 2 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center bg-surface-container-lowest hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="col-span-10 md:col-span-6 flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-2xl">image</span>
+</div>
+<div>
+<h5 class="font-bold text-sm tracking-tight">品牌重塑方案-最终稿-V2.png</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter mt-1">PNG Image</p>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-xs font-mono">12.8 MB</div>
+<div class="hidden md:block col-span-3 text-xs text-on-surface-variant">2024-03-19 09:15</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer active:scale-90 transition-all">more_vert</span>
+</div>
+</div>
+<!-- File Row 3 -->
+<div class="grid grid-cols-12 px-6 py-8 items-center bg-surface-container-lowest hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="col-span-10 md:col-span-6 flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<div>
+<h5 class="font-bold text-sm tracking-tight">核心开发文档与安全协议.docx</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter mt-1">DOCX Document</p>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-xs font-mono">1.1 MB</div>
+<div class="hidden md:block col-span-3 text-xs text-on-surface-variant">2024-03-18 17:45</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer active:scale-90 transition-all">more_vert</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-28 md:bottom-12 right-8 bg-primary text-white flex items-center gap-3 pl-6 pr-8 h-16 shadow-[0_20px_40px_rgba(28,27,27,0.2)] active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined">add</span>
+<span class="text-xs font-bold uppercase tracking-[0.2em]">上传文件</span>
+</button>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-12 pb-safe bg-white dark:bg-black z-50">
+<div class="flex flex-col items-center justify-center text-black dark:text-white font-bold active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">文件</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5f5e5e] dark:text-[#5f5e5e] opacity-50 active:scale-90 cursor-pointer hover:opacity-100 transition-opacity duration-150">
+<span class="material-symbols-outlined">share</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">分享</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5f5e5e] dark:text-[#5f5e5e] opacity-50 active:scale-90 cursor-pointer hover:opacity-100 transition-opacity duration-150">
+<span class="material-symbols-outlined">group</span>
+<span class="font-noto-sans-sc text-[10px] tracking-widest uppercase mt-1">用户</span>
+</div>
+</footer>
+</body></html>
