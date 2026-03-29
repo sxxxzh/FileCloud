@@ -9,6 +9,9 @@ Thumbs.db
 # 本地覆盖配置（不提交）
 .env.local
 .env.*.local
+.env.test
+.env.production
+.env.development
 
 # Prisma
 prisma/*.db
