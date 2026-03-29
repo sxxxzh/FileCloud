@@ -14,10 +14,10 @@ npm install
 
 项目支持两个环境配置：
 
-| 环境 | 配置文件 | 说明 |
-|------|---------|------|
+| 环境        | 配置文件             | 说明         |
+| ----------- | -------------------- | ------------ |
 | development | `.env.development` | 本地开发环境 |
-| production | `.env.production` | 生产环境 |
+| production  | `.env.production`  | 生产环境     |
 
 **配置项说明：**
 
@@ -27,12 +27,12 @@ DB_HOST=localhost          # MySQL主机
 DB_PORT=3306              # MySQL端口
 DB_NAME=cloud_storage     # 数据库名
 DB_USER=root              # 用户名
-DB_PASSWORD=2259421152shen  # 密码
+DB_PASSWORD= # 密码
 
 # Redis配置
 REDIS_HOST=localhost      # Redis主机
 REDIS_PORT=6379          # Redis端口
-REDIS_PASSWORD=2259421152shen  # Redis密码
+REDIS_PASSWORD= # Redis密码
 REDIS_DB=0               # 数据库编号
 
 # JWT配置
